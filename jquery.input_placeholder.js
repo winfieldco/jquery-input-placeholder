@@ -11,6 +11,14 @@
       $(this).find('input[data-placeholder], textarea[data-placeholder]').each(function(){
         var $input = $(this);
 
+        // If the placeholder has already been initialized, remove it first
+        // so doubles do not appear
+        if($input.parent().find('.placeholder').length > 0) {
+          var hookEl = $input.parent().parent();
+          $input.parent().remove();
+          hookEl.append($input);
+        }
+
         var $container = $('<div><span>' + $input.attr('data-placeholder') + '</span></div>');
         $container.css('position','relative');
 
