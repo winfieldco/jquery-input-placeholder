@@ -29,6 +29,7 @@
           'left': $input.css('padding-left'),
           'top': $input.css('padding-top'),
           'font-size': $input.css('font-size'),
+          'line-height': $input.css('line-height'),
           'font-weight': $input.css('font-weight'),
           'font-style': $input.css('font-style'),
           'font-size-adjust': $input.css('font-size-adjust'),
@@ -53,6 +54,7 @@
 
         function onWindowResize() {
           $container.find('span').css('font-size', $input.css('font-size'));
+          $container.find('span').css('line-height', $input.css('line-height'));
         };
 
         $(window).resize(function() {
@@ -66,8 +68,6 @@
 
         var input_value = $input.val();
         setInterval(function(){
-
-
 
           if ($input.val() != input_value) {
             if ($input.val().length == 0) {
