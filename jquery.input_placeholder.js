@@ -47,6 +47,8 @@
         $input.appendTo($container);
 
         $span.addClass('placeholder');
+        $span.addClass('placeholder-type-' + $input.attr('type'));
+        $span.addClass('placeholder-name-' + $input.attr('name'));
 
         $span.click(function(){
           $input.focus();
